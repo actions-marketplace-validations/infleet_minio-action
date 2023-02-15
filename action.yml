@@ -1,0 +1,24 @@
+name: "minio-action"
+description: "SetUP MinIO"
+author: "infleet"
+branding:
+  icon: fast-forward
+  color: blue
+inputs:
+  version:
+    description: "Version of MinIO"
+    required: false
+    default: "latest"
+  port:
+    description: "Port to forward the access to MinIO, S3 API like"
+    required: false
+    default: "9000"
+  username:
+    description: "The username used to authenticate to S3 api, common used as AWS_ACCESS_KEY_ID"
+    required: true
+  password:
+    description: "The password used to authenticate to S3 api, common used as AWS_SECRET_ACCESS_KEY"
+    required: true
+runs:
+  using: "docker"
+  image: "Dockerfile"
